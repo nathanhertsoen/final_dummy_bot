@@ -1,0 +1,52 @@
+{
+    
+    "v1spia--1-": "first conjugation active verb",
+    "v1spia--2-": "second conjugation active verb",
+    "v1spia--3-": "third conjugation active verb",
+
+
+    "n-p---mn1-": "plurial masculine noun of the first declension",
+    "n-p---mn2-": "plurial masculine noun of the second declension",
+    "n-p---mn3-": "plurial masculine noun of the third declension",
+    "n-p---mn4-": "plurial masculine noun of the fourth declension",
+    "n-p---mn5-": "plurial masculine noun of the fifth declension",
+
+
+    "n-p---fn1-": "plurial feminine noun of the first declension",
+    "n-p---fn2-": "plurial feminine noun of the second declension",
+    "n-p---fn3-": "plurial feminine noun of the third declension",
+    "n-p---fn4-": "plurial feminine noun of the fourth declension",
+    "n-p---fn5-": "plurial feminine noun of the fifth declension",
+
+
+    "n-s---mn1-": "singular masculine noun of the first declension",
+    "n-s---mn2-": "singular masculine noun of the second declension",
+    "n-s---mn3-": "singular masculine noun of the third declension",
+    "n-s---mn4-": "singular masculine noun of the fourth declension",
+    "n-s---mn5-": "singular masculine noun of the fifth declension",
+
+
+    "n-s---fn1-": "singular feminine noun of the first declension",
+    "n-s---fn2-": "singular feminine noun of the second declension",
+    "n-s---fn3-": "singular feminine noun of the third declension",
+    "n-s---fn4-": "singular feminine noun of the fourth declension",
+    "n-s---fn5-": "singular feminine noun of the fifth declension",
+
+
+    "n-s---nn2-": "neuter singular noun of the second declension",
+    "n-s---nn3-": "neuter singular noun of the third declension",
+    "n-s---nn4-": "neuter singular noun of the fourth declension",
+
+
+    "aps---mn1-": "first class ajective",
+    "aps---mn2-": "second class ajective",
+    "aps---mn3-": "third class ajective",
+
+
+    "n-p---nn2-": "neuter plurial noun => _pluralia tantum_ of the second declension",
+    "n-p---nn3-": "neuter plurial noun => _pluralia tantum_ of the third declension",
+    "n-p---nn4-": "neuter plurial noun => _pluralia tantum_ of the fourth declension",
+
+
+    "rp--------": "adverb"
+}
