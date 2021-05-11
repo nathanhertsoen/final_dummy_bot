@@ -36,8 +36,8 @@ module.exports = class QuidCommand extends Command {
                 var indexCounter = globalElement.length;
                 if (!indexCounter){return msg.say('No match found !');}
                 
-                const FoundedReseachLines = randomFoundedReseachLines[Math.floor(Math.random() * randomFoundedResearchLines.length)];
-                msg.say("<@" + msg.author.id + ">" + FoundedReseachLines);
+                const FoundedResearchLines = randomFoundedResearchLines[Math.floor(Math.random() * randomFoundedResearchLines.length)];
+                msg.say("<@" + msg.author.id + ">" + FoundedResearchLines);
 
                 const posPossibility = { 'v': 'verb', 'n': 'noun', 'a': 'adjective', 'r': 'adverb', '': 'undefined', ' ': 'undefined' };
                     for (var elementID = 0; elementID < indexCounter; ++elementID){
