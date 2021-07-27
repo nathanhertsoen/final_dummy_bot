@@ -3,6 +3,9 @@ const axios = require('axios')
 const { morphoPossibility } = require('../../resources/magistratus.js');
 const { randomFoundedResearchLines } = require('../../resources/randomFoundedResearchLines.js');
 
+const paginationEmbed = require('discord.js-pagination');
+const { MessageEmbed } = require('discord.js');
+
 
 module.exports = class QuidCommand extends Command {
     
@@ -29,6 +32,7 @@ module.exports = class QuidCommand extends Command {
     }
     
      run(msg, { lemma }) {
+
             const API = axios.get('https://latinwordnet.exeter.ac.uk/api/lemmas/' + lemma + '/')
                 
                 .then(async(result) => {
@@ -40,34 +44,48 @@ module.exports = class QuidCommand extends Command {
                 msg.say("<@" + msg.author.id + ">" + FoundedResearchLines);
 
                 const posPossibility = { 'v': 'verb', 'n': 'noun', 'a': 'adjective', 'r': 'adverb', '': 'undefined', ' ': 'undefined' };
-                    for (var elementID = 0; elementID < indexCounter; ++elementID){
-                        var elementIndex = globalElement[elementID];
-                        var IPA = elementIndex['phonological_transcription'];
-                        var IPA = IPA[0]['ipa'];
-                        var lemma = elementIndex['lemma'];
-
-                        var pos = elementIndex['pos'];
-                        var pos = posPossibility[pos];
-
-                        var morpho = elementIndex['morpho'];     
-                        var morpho = morphoPossibility[morpho];
-
-                        var prosody = elementIndex['prosody'];
-                        var principalParts = elementIndex['principal_parts'];
-
-                    var indexFinder = ('  ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ '+ '**' + (elementID + 1) + '**'+' ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ Table Of Index ' + '\n\n' +
-
+                   
+                
+                for (let i = 0; i < indexCounter; ++i){
+                      let elementIndex = globalElement[i];
+                        let IPA = elementIndex['phonological_transcription'];
+                        IPA = IPA[0]['ipa'];
+                        let lemma = elementIndex['lemma'];
+                        let pos = elementIndex['pos'];
+                        pos = posPossibility[pos];
+                        let morpho = elementIndex['morpho'];     
+                        morpho = morphoPossibility[morpho];
+                        let prosody = elementIndex['prosody'];
+                        let principalParts = elementIndex['principal_parts'];
+                        let indexFinder = ('  ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ '+ '**' + (i + 1) + '**'+' ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ Table Of Index ' + '\n\n' +
                         'International Phon. Alpha.  :  ' + IPA  + '\n\n' +
-
                         'Lemma : '      + lemma + '\n' +
                         'Function : '    + pos + '\n' +
                         'Morpho : '       + morpho + '\n' +
                         'Prosody : '      + prosody + '\n' +
                         'Radical : '      + principalParts + '\n');
                     
-                    await msg.say({ embed: { color: 0x9d0c0c, description: indexFinder }});
-                   
+                        const embed1 = new MessageEmbed();
+                        const embed2 = new MessageEmbed();
+
+                        var pages = [
+
+                            embed1,
+                            embed2,
+                        ];
+
+                    // await msg.say({ embed: { color: 0x9d0c0c, description: indexFinder }});
+                    // await msg.say({ embed: { color: 0x9d0c0c, description: indexFinder }});
+
                 }
+
+
+                paginationEmbed(msg,pages);
+
+              
+
+
+
             })
             .catch((err) => {
                 console.error('ERR', err);

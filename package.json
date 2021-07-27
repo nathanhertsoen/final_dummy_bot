@@ -12,6 +12,7 @@
     "axios": "^0.21.1",
     "discord.js": "^12.5.3",
     "discord.js-commando": "github:discordjs/Commando",
+    "discord.js-pagination": "^1.0.3",
     "express-async-errors": "^3.1.1",
     "node-fetch": "^2.6.1",
     "passport-bnet": "^2.0.0",

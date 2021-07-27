@@ -19,7 +19,14 @@ client.registry
         ['pokemon', "Searching for pokemon"],
     ])
     .registerDefaultGroups()
-    .registerDefaultCommands()
+    .registerDefaultCommands({
+        help: true, 
+        prefix: false, 
+        ping: false,
+        eval: false,
+        unknownCommand: true, 
+        commandState: true
+})
     .registerCommandsIn(path.join(__dirname, 'commands'));
     
 client.once('ready', () => {
